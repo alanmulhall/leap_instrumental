@@ -31,6 +31,11 @@
     %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png")
     %link(rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png")
     
+    -# Include Leapstrap CSS
+    %link(rel="stylesheet" href="//wilkesalex.github.io/leapstrap/dist/css/leapstrap.css")
+    -# Include jQuery (maybe you already do?)
+    %script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+
     -# Stylesheets
     = stylesheet_link_tag 'application'
   %body{class: current_page.data.body_class || 'page'}
@@ -38,6 +43,10 @@
     -# Javascripts
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js'
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js'
+    -# Include Leap
+    = javascript_include_tag "//js.leapmotion.com/0.3.0-beta3/leap.js"
+    -#Include Leapstrap JS
+    = javascript_include_tag "//wilkesalex.github.io/leapstrap/dist/js/leapstrap.js"
     = javascript_include_tag 'application'
 
     - if build?
