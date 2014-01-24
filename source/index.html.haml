@@ -3,7 +3,23 @@ title: Middleman is Watching
 body_class: index
 ---
 
-.welcome
-  %h1 Middleman is Watching
-  %p.doc
-    = link_to 'Read Online Documentation', 'http://middlemanapp.com/', title: 'Read Online Documentation', target: '_blank'
+#carousel-example-generic.carousel.slide{ "data-ride" => "carousel", "data-interval" => "20000" }
+  .carousel-inner
+    .item.active
+      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2099.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
+    .item
+      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2100.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
+    .item
+      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2102.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
+    .item
+      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2103.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
+    .item
+      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2105.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
+    .item
+      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2105.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
+    .item
+      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2109.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
+  %a.left.carousel-control.leap-interactive{"data-slide" => "prev", href: "#carousel-example-generic"}
+    %span.glyphicon.glyphicon-chevron-left
+  %a.right.carousel-control.leap-interactive{"data-slide" => "next", href: "#carousel-example-generic"}
+    %span.glyphicon.glyphicon-chevron-right

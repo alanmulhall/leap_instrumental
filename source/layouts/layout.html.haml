@@ -49,6 +49,9 @@
     = javascript_include_tag "//wilkesalex.github.io/leapstrap/dist/js/leapstrap.js"
     = javascript_include_tag 'application'
 
+    :javascript
+      LeapManager.init({ interactiveSelector: "a", maxCursors: 1, enableMetaGestures: true, enableDefaultMetaGestureActions: true });
+
     - if build?
       -# Google Analytics
       :javascript
