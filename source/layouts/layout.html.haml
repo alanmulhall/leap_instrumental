@@ -50,12 +50,49 @@
     = javascript_include_tag 'application'
 
     :javascript
-      LeapManager.init({ interactiveSelector: "a", maxCursors: 1, enableMetaGestures: true, enableDefaultMetaGestureActions: true });
+      //set maxCursors to 0 if you want no pointer
+      LeapManager.init({ interactiveSelector: "a", maxCursors: 0, enableMetaGestures: true, enableDefaultMetaGestureActions: true });
 
-    - if build?
-      -# Google Analytics
-      :javascript
-        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
+    :javascript
+      var controllerOptions = {enableGestures: true};
+
+      Leap.loop(controllerOptions, function(frame) {
+        // Body of callback function
+        // Display Gesture object data
+        var gestureString = "";
+        if (frame.gestures.length > 0) {
+          for (var i = 0; i < frame.gestures.length; i++) {
+            var gesture = frame.gestures[i];
+            gestureString += "Gesture ID: " + gesture.id + ", "
+                          + "type: " + gesture.type + ", "
+                          + "state: " + gesture.state + ", "
+                          + "hand IDs: " + gesture.handIds.join(", ") + ", "
+                          + "pointable IDs: " + gesture.pointableIds.join(", ") + ", "
+                          + "duration: " + gesture.duration + " &micro;s, ";
+
+            console.log(gesture.type);
+            switch (gesture.type) {
+              case "circle":
+                gestureString += "center: " + gesture.center + " mm, "
+                              + "radius: " + gesture.radius.toFixed(1) + " mm, "
+                              + "progress: " + gesture.progress.toFixed(2) + " rotations";
+                break;
+              case "swipe":
+                gestureString += "start position: " + gesture.startPosition + " mm, "
+                              + "current position: " + gesture.position + " mm, "
+                              //+ "direction: " + gesture.direction + ", "
+                              + "direction: " + vectorToString(gesture.direction, 2),
+                              + "speed: " + gesture.speed.toFixed(1) + " mm/s";
+                break;
+              case "screenTap":
+              case "keyTap":
+                gestureString += "position: " + gesture.position + " mm, "
+                              + "direction: " + gesture.direction;
+                break;
+              default:
+                gestureString += "unkown gesture type";
+            }
+            console.log(gestureString);
+          }
+        }
+      });
