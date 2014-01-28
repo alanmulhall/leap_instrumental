@@ -32,11 +32,3 @@ Leap.loop(controllerOptions, function (frame) {
     }
   }
 });
-
-$('.carousel').on('slide.bs.carousel', function () {
-  window.isSliding = true;
-});
-
-$('.carousel').on('slid.bs.carousel', function () {
-  window.isSliding = false;
-});
