@@ -3,23 +3,39 @@ title: Middleman is Watching
 body_class: index
 ---
 
-#carousel-example-generic.carousel.slide{ "data-ride" => "carousel", "data-interval" => "20000" }
+#carousel-example-generic.carousel.slide.leap-interactive{ "leap-attractor" => "true", "data-ride" => "carousel", "data-interval" => "false" }
   .carousel-inner
     .item.active
-      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2099.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
+      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2099.png?duration=604800&resolution=1920&width=1920&height=1080" class="img-responsive leap-interactive")
+      .carousel-caption
+        %p
+          System CPU
     .item
-      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2100.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
+      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2100.png?duration=604800&resolution=1920&width=1920&height=1080" class="img-responsive leap-interactive")
+      .carousel-caption
+        %p
+          Action Controller Runtime View
     .item
-      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2102.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
+      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2102.png?duration=604800&resolution=1920&width=1920&height=1080" class="img-responsive leap-interactive")
+      .carousel-caption
+        %p
+          Free Memory
     .item
-      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2103.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
+      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2103.png?duration=604800&resolution=1920&width=1920&height=1080" class="img-responsive leap-interactive")
+      .carousel-caption
+        %p
+          Active Record Sql Select
     .item
-      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2105.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
+      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2105.png?duration=604800&resolution=1920&width=1920&height=1080" class="img-responsive leap-interactive")
+      .carousel-caption
+        %p
+          Running Processes
     .item
-      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2105.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
-    .item
-      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2109.png?duration=86400&resolution=1200&width=4000&height=2000" class="img-responsive leap-interactive")
-  %a.left.carousel-control.leap-interactive{"data-slide" => "prev", href: "#carousel-example-generic"}
+      %img(src="http://instrumentalapp.com/graphs/371c1c91df95385b499c4169fb8ceadb/2109.png?duration=604800&resolution=1920&width=1920&height=1080" class="img-responsive leap-interactive")
+      .carousel-caption
+        %p
+          New Signup Created
+  -#%a.left.carousel-control.leap-interactive{"leap-attractor" => "true", "data-slide" => "prev", href: "#carousel-example-generic"}
     %span.glyphicon.glyphicon-chevron-left
-  %a.right.carousel-control.leap-interactive{"data-slide" => "next", href: "#carousel-example-generic"}
+  -#%a.right.carousel-control.leap-interactive{"leap-attractor" => "true", "data-slide" => "next", href: "#carousel-example-generic"}
     %span.glyphicon.glyphicon-chevron-right
