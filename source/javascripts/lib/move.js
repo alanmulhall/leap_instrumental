@@ -1,5 +1,3 @@
-window.sliding = false;
-
 LeapManager.init({ maxCursors: 0, enableMetaGestures: true, enableDefaultMetaGestureActions: false });
 
 var controllerOptions = { enableGestures: true };
